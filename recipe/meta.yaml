@@ -1,5 +1,5 @@
 {% set name = "mygeopackage" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,8 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 7e80b84996c7cd7e5ee623b1bdb1061a76063e74975a5c369d743769c9b0e38a
+  sha256: 2f15cbf1cc23317be5f318918c9feb8c1d2b238d91277b804cd9f4d01d1fb2df
+
 
 build:
   number: 0
@@ -20,11 +21,13 @@ requirements:
     - python >=3.6
   run:
     - folium
+    - ipyfilechooser
     - ipyleaflet
     - numpy
     - pyshp
-    - python >=3.6
+    - python
     - scikit-learn
+    - whitebox
 
 test:
   imports:
