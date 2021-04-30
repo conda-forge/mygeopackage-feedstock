@@ -1,18 +1,18 @@
 {% set name = "mygeopackage" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 2f15cbf1cc23317be5f318918c9feb8c1d2b238d91277b804cd9f4d01d1fb2df
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 2ba28f9e35188756a912072a3144226c3af3dc937406d519fd4b866ee0f48219
 
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
@@ -34,11 +34,11 @@ test:
     - mygeopackage
 
 about:
-  home: "https://github.com/yungming0119/mygeopackage"
+  home: https://github.com/yungming0119/mygeopackage
   license: MIT
   license_family: MIT
-  license_file:  LICENSE
-  summary: "Python package for gis application"
+  license_file: LICENSE
+  summary: Python package for gis application
   doc_url: https://yungming0119.github.io/mygeopackage/
   dev_url: https://github.com/yungming0119/mygeopackage
 
