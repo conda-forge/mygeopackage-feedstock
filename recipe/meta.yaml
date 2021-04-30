@@ -1,5 +1,5 @@
 {% set name = "mygeopackage" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,8 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 2f15cbf1cc23317be5f318918c9feb8c1d2b238d91277b804cd9f4d01d1fb2df
-
+  sha256: 2ba28f9e35188756a912072a3144226c3af3dc937406d519fd4b866ee0f48219
 
 build:
   number: 0
