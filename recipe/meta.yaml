@@ -6,30 +6,32 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 2ba28f9e35188756a912072a3144226c3af3dc937406d519fd4b866ee0f48219
 
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - folium
     - ipyfilechooser
     - ipyleaflet
     - numpy
     - pyshp
-    - python >=3.6
+    - python >={{ python_min }}
     - scikit-learn
     - whitebox
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - mygeopackage
 
